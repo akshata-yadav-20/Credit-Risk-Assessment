@@ -4,55 +4,43 @@
 ![Flask](https://img.shields.io/badge/Flask-3.0-red?logo=flask)
 ![scikit-learn](https://img.shields.io/badge/scikit--learn-1.4.0-f7931e?logo=scikit-learn)
 ![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)
-[![Demo](https://img.shields.io/badge/Demo-Live%20Site-blue)](https://akshata-yadav-20.github.io/Credit-Risk-Assessment/)
+![Demo Status](https://img.shields.io/badge/Demo-LIVE-green)
+![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live-blue?logo=githubpages)
 
-## AI-Powered Credit Risk Assessment for Financial Institutions
+## AI-Powered Credit Risk Assessment for Financial Institutions 🏦
 
-A comprehensive machine learning system that predicts customer creditworthiness using financial and demographic data, helping financial institutions identify potential loan defaulters.
+[![Live Demo](https://img.shields.io/badge/Demo-Live%20Site-blue?style=for-the-badge)](https://akshata-yadav-20.github.io/Credit-Risk-Assessment/)
+[![View on GitHub](https://img.shields.io/badge/GitHub-Checkout%20Repo-black?style=for-the-badge&logo=github)](https://github.com/akshata-yadav-20/Credit-Risk-Assessment)
+
+### 🔥 LIVE DEMO: https://akshata-yadav-20.github.io/Credit-Risk-Assessment/
+
+---
+
+## Overview
+
+Financial institutions face significant challenges in identifying potential loan defaulters. The **Credit Risk Assessment System** is an AI-powered solution that leverages machine learning to predict customer creditworthiness using financial and demographic data, helping financial institutions make data-driven lending decisions.
 
 ---
 
 ## 🎯 Key Features
 
-- **AI-Powered**: Random Forest classifier trained on 10,000+ synthetic samples
-- **Real-time**: Instant risk assessment in milliseconds
-- **Secure**: Privacy-focused - no sensitive data stored or transmitted
-- **Modern UI**: Dark-themed, responsive interface with real-time validation
-- **Multiple Deployment Options**: Flask server, static HTML, or GitHub Pages
+- ✅ **AI-Powered**: Random Forest classifier trained on 10,000+ synthetic samples
+- ✅ **Real-time**: Instant risk assessment in milliseconds
+- ✅ **Secure**: Privacy-focused - no sensitive data stored or transmitted
+- ✅ **Modern UI**: Dark-themed, responsive interface with real-time validation
+- ✅ **Multiple Deployment Options**: Flask server, static HTML, or GitHub Pages
+- ✅ **Live Demo**: Try it now at https://akshata-yadav-20.github.io/Credit-Risk-Assessment/
 
 ---
 
-## 🚀 Live Demo
+## 🚀 Quick Start
 
-**[🔗 Click here to access the live demo](https://akshata-yadav-20.github.io/Credit-Risk-Assessment/)**
+### Option 1: Use the Live Demo (No Installation Required)
+Simply visit: **https://akshata-yadav-20.github.io/Credit-Risk-Assessment/**
 
-The demo runs entirely in your browser - no installation required. Simply open the link, fill in customer details, and get instant credit risk assessment.
+The demo runs entirely in your browser - fill in customer details and get instant risk assessment!
 
-### Demo Screenshots
-
-<img src="https://via.placeholder.com/800x400/1a365d/ffffff?text=Credit+Risk+Assessment+Demo" alt="Demo Preview" width="100%" style="border-radius: 8px;" />
-
----
-
-## 📋 Table of Contents
-
-- [Installation](#installation)
-- [Usage](#usage)
-- [Model Details](#model-details)
-- [API Reference](#api-reference)
-- [Project Structure](#project-structure)
-- [Contributing](#contributing)
-- [License](#license)
-
----
-
-## ⚙️ Installation
-
-### Prerequisites
-- Python 3.9+
-- pip
-
-### Setup Steps
+### Option 2: Run Locally
 
 ```bash
 # Clone the repository
@@ -76,27 +64,14 @@ python run.py
 ## 💻 Usage
 
 ### Web Interface
-
-1. Start the server: `python run.py`
-2. Navigate to `http://localhost:5000`
-3. Fill in customer details:
-   - Age
-   - Annual Income
-   - Loan Amount
-   - Credit Score (300-850)
-   - Employment Length (years)
-   - Debt-to-Income Ratio
-   - Existing Loans
-   - Education Level
-   - Marital Status
-   - Home Ownership
-4. Click **Assess Credit Risk**
-5. View the risk assessment result with probability and recommendation
+1. Open https://akshata-yadav-20.github.io/Credit-Risk-Assessment/
+2. Fill in customer details (Age, Income, Loan Amount, Credit Score, etc.)
+3. Click **Assess Credit Risk**
+4. View the risk assessment result with probability and recommendation
 
 ### API Usage
 
 ```bash
-# Send a POST request to the assessment endpoint
 curl -X POST http://localhost:5000/assess \
   -H "Content-Type: application/json" \
   -d '{
@@ -114,7 +89,6 @@ curl -X POST http://localhost:5000/assess \
 ```
 
 ### Response Format
-
 ```json
 {
   "success": true,
@@ -131,7 +105,7 @@ curl -X POST http://localhost:5000/assess \
 ## 🤖 Model Details
 
 ### Algorithm
-**Random Forest Classifier** - An ensemble learning method that operates by constructing multiple decision trees at training time.
+**Random Forest Classifier** - An ensemble learning method that operates by constructing multiple decision trees.
 
 ### Training Data
 - **Samples**: 10,000 synthetic customer profiles
@@ -163,8 +137,7 @@ curl -X POST http://localhost:5000/assess \
 
 ## 📡 API Reference
 
-### `POST /assess`
-
+### POST /assess
 Assess credit risk for a customer.
 
 **Request Body:**
@@ -195,8 +168,7 @@ Assess credit risk for a customer.
 }
 ```
 
-### `GET /api/features`
-
+### GET /api/features
 Get information about input features.
 
 ---
@@ -227,8 +199,6 @@ credit-risk-assessment/
 
 ## 🛠️ Development
 
-### Project Setup for Development
-
 ```bash
 # Clone the repository
 git clone https://github.com/akshata-yadav-20/Credit-Risk-Assessment.git
@@ -246,28 +216,9 @@ python run.py
 ```
 
 ### Model Training
-
 ```bash
 python ml/train_model.py
 ```
-
-This will:
-1. Generate 10,000 synthetic customer profiles
-2. Preprocess the data
-3. Train the Random Forest classifier
-4. Save the model and scaler to `models/` directory
-
----
-
-## 🤝 Contributing
-
-Contributions are welcome! Please follow these steps:
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
 
 ---
 
@@ -277,28 +228,18 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-## 🙏 Acknowledgments
-
-- **Dataset**: Synthetic data generated for demonstration purposes
-- **ML Framework**: [scikit-learn](https://scikit-learn.org/)
-- **Backend**: [Flask](https://flask.palletsprojects.com/)
-- **Frontend**: [Bootstrap 5](https://getbootstrap.com/)
-- **Icons**: [Font Awesome 6](https://fontawesome.com/)
-
----
-
 ## 📞 Contact
 
 **Akshata Yadav** - [@akshata-yadav-20](https://github.com/akshata-yadav-20)
 
-Project Link: [https://github.com/akshata-yadav-20/Credit-Risk-Assessment](https://github.com/akshata-yadav-20/Credit-Risk-Assessment)
-
-Demo: [https://akshata-yadav-20.github.io/Credit-Risk-Assessment/](https://akshata-yadav-20.github.io/Credit-Risk-Assessment/)
+- **Live Demo**: https://akshata-yadav-20.github.io/Credit-Risk-Assessment/
+- **GitHub**: https://github.com/akshata-yadav-20/Credit-Risk-Assessment
 
 ---
 
-### 🏦 Banking Domain Project
-> **Problem Statement**: Financial institutions face challenges in identifying loan defaulters. Develop an AI model that predicts customer creditworthiness using financial and demographic data.
+## 🙏 Acknowledgments
 
-### 🔍 Solution Approach
-This project implements an AI-powered credit risk assessment system using a Random Forest classifier to predict the likelihood of loan defaults. The model considers various financial indicators (credit score, income, debt-to-income ratio, etc.) to identify high-risk customers, enabling financial institutions to make data-driven lending decisions.
+- **Framework**: [scikit-learn](https://scikit-learn.org/)
+- **Backend**: [Flask](https://flask.palletsprojects.com/)
+- **Frontend**: [Bootstrap 5](https://getbootstrap.com/)
+- **Icons**: [Font Awesome 6](https://fontawesome.com/)
