@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "builds": [
+    {
+      "src": "app/templates/index_static.html",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "headers": { "Cache-Control": "no-cache" },
+      "status": 200,
+      "dest": "/app/templates/index_static.html"
+    }
+  ]
+}

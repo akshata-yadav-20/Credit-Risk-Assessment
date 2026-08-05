@@ -1,0 +1,45 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+permissions:
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  url-cancel-running: true
+
+jobs:
+  pages:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+          
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+        
+      - name: Train model
+        run: python ml/train_model.py
+        
+      - name: Copy index.html
+        run: cp app/templates/index_static.html index.html
+        
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+        with:
+          publish_dir: ./.
+          
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        
+      - name: Deploy
+        uses: actions/deploy-pages@v3

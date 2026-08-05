@@ -1,0 +1,45 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "credit-risk-assessment"
+version = "1.0.0"
+description = "AI-powered Credit Risk Assessment System for Banking"
+description-content-type = "text/markdown"
+requires-python = ">=3.9"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [
+    {name = "Akshata Yadav", email = "akshata-yadav-20@example.com"}
+]
+keywords = ["banking", "credit-risk", "machine-learning", "ai", "finance", "flask"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Financial and Insurance Industry",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+[project.urls]
+Homepage = "https://github.com/akshata-yadav-20/Credit-Risk-Assessment"
+Repository = "https://github.com/akshata-yadav-20/Credit-Risk-Assessment"
+Demo = "https://akshata-yadav-20.github.io/Credit-Risk-Assessment/"
+
+[tool.black]
+line-length = 100
+target-version = ['py39']
+
+[tool.isort]
+profile = "black"
+line_length = 100
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
