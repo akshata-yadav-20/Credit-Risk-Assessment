@@ -14,31 +14,18 @@ concurrency:
   url-cancel-running: true
 
 jobs:
-  pages:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       
-      - name: Setup Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.9'
-          
-      - name: Install dependencies
-        run: pip install -r requirements.txt
-        
-      - name: Train model
-        run: python ml/train_model.py
-        
-      - name: Copy index.html
-        run: cp app/templates/index_static.html index.html
+      - name: Copy index.html for GitHub Pages
+        run: cp app/templates/index.html ./
         
       - name: Setup Pages
         uses: actions/configure-pages@v4
-        with:
-          publish_dir: ./.
-          
-      - name: Upload Pages artifact
+        
+      - name: Build
         uses: actions/upload-pages-artifact@v3
         
       - name: Deploy
