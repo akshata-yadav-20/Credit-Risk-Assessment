@@ -1,4 +1,0 @@
-homepage = "https://akshata-yadav-20.github.io/Credit-Risk-Assessment/"
-description = "AI-powered Credit Risk Assessment System for Banking - Predicts customer creditworthiness using Random Forest ML model"
-topics = ["banking", "credit-risk", "machine-learning", "ai", "flask", "python"]
-private = false
