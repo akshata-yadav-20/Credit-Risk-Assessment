@@ -10,16 +10,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      
-      - name: Prepare static site
+      - name: Create gh-pages branch
         run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          # Create gh-pages branch with just the demo files
+          git checkout --orphan gh-pages
+          # Remove all but docs content
           mkdir -p docs
           cp app/templates/index.html docs/index.html
           touch docs/.nojekyll
-          
-      - name: Deploy to GitHub Pages using peaceiris
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./docs
-          publish_branch: gh-pages
+          git add docs/
+          git commit -m "Deploy to GitHub Pages"
+          git push origin gh-pages --force
+          git checkout main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
