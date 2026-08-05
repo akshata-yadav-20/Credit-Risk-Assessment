@@ -6,12 +6,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  pages: write
-  id-token: write
-
-concurrency:
-  group: pages
-  url-cancel-running: true
+  contents: read
 
 jobs:
   deploy:
@@ -19,14 +14,14 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       
-      - name: Copy index.html for GitHub Pages
-        run: cp app/templates/index.html ./
-        
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
-        
-      - name: Build
-        uses: actions/upload-pages-artifact@v3
-        
-      - name: Deploy
-        uses: actions/deploy-pages@v3
+      - name: Copy index.html to docs folder
+        run: |
+          cp app/templates/index.html docs/index.html
+          echo "" > docs/.nojekyll
+          
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs
+          publish_branch: gh-pages
