@@ -5,21 +5,19 @@ on:
     branches: [ main ]
   workflow_dispatch:
 
-permissions:
-  contents: read
-
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       
-      - name: Copy index.html to docs folder
+      - name: Prepare static site
         run: |
+          mkdir -p docs
           cp app/templates/index.html docs/index.html
-          echo "" > docs/.nojekyll
+          touch docs/.nojekyll
           
-      - name: Deploy to GitHub Pages
+      - name: Deploy to GitHub Pages using peaceiris
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
